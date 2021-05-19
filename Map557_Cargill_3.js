@@ -362,7 +362,7 @@ define(["https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js", "jquery
                         ]
 
                     },
-                    "circle-color": "efbf13"
+                    "circle-color": "#efbf13"
                 },
                 "filter": ["==", "$type", "Point"],
 
