@@ -843,7 +843,7 @@ define(["https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js", "jquery
             var Claim_N = e.features[0].properties.name;
             var Street_N = e.features[0].properties.street;
             var City_N = e.features[0].properties.city;
-            var insVal = e.features[0].properties.Insured_Value;
+            var insVal = e.features[0].properties.total_paid3;
 
             var options2 = { style: 'currency', currency: 'USD' };
             var numberFormat2 = new Intl.NumberFormat('en-US', options2);
