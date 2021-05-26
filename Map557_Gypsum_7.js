@@ -17,6 +17,7 @@ define(["https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js", "jquery
     var earthquake_h = 'none';
     var total_paid = 0;
     var wildfire_p = 'none';
+    var insurval = 'C_TOTAL_INSURED_PROP_VAL_C';
 
     function BasicControl() { };
 
@@ -286,7 +287,7 @@ define(["https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js", "jquery
             var feature = features[0];
             var Day = new Date(feature.properties.time);
             var Day1 = Day.toUTCString();
-            var ivalue = features.properties.Insured_Value;
+            var ivalue = feature.;
 
             var popup = new mapboxgl.Popup({ offset: [0, -15] })
                 .setLngLat(feature.geometry.coordinates)
@@ -600,7 +601,8 @@ define(["https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js", "jquery
                         "to-string",
                         [
                             "get",
-                            "Office"
+                            "Office",
+                            "Total Paid"
                         ]
                     ],
                     "text-size": 12,
@@ -628,7 +630,7 @@ define(["https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js", "jquery
             var url = 'http://www.ventivtech.com'
             var popup = new mapboxgl.Popup({ offset: [0, -15] })
                 .setLngLat(feature.geometry.coordinates)
-                .setHTML('<h3>' + feature.properties.Office + '</h3>' + 'Street: ' + feature.properties.Street + '<br>' + 'Insured Value: ' + feature.properties.Insured_Value + '</p>')
+                .setHTML('<h3>' + feature.properties.Office + '</h3>' + 'Street: ' + feature.properties.Street + '<br>' + 'Insured Value: ' + feature.properties.Paid + '</p>')
                 .setLngLat(feature.geometry.coordinates)
 
                 .addTo(map);
@@ -843,7 +845,7 @@ define(["https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js", "jquery
             var Claim_N = e.features[0].properties.name;
             var Street_N = e.features[0].properties.street;
             var City_N = e.features[0].properties.city;
-            var insVal = e.features[0].properties.total_paid3;
+            var insVal = e.features[0].properties.Insured_Value;
 
             var options2 = { style: 'currency', currency: 'USD' };
             var numberFormat2 = new Intl.NumberFormat('en-US', options2);
