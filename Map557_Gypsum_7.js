@@ -290,7 +290,7 @@ define(["https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js", "jquery
 
             var popup = new mapboxgl.Popup({ offset: [0, -15] })
                 .setLngLat(feature.geometry.coordinates)
-                .setHTML('<h3>' + feature.properties.place + '</h3><p>' + 'Insured Value:' + feature.properties.Insured_Value + '<br>' + 'Magnitude: ' + feature.properties.mag + '<br>' + 'Date: ' + Day1 + '<br>' + 'source: http://earthquake.usgs.gov/earthquakes' + '</p>')
+                .setHTML('<h3>' + feature.properties.place + '</h3><p>' + '<br>' + 'Magnitude: ' + feature.properties.mag + '<br>' + 'Date: ' + Day1 + '<br>' + 'source: http://earthquake.usgs.gov/earthquakes' + '</p>')
                 .setLngLat(feature.geometry.coordinates)
                 .addTo(map);
 
@@ -843,6 +843,7 @@ define(["https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js", "jquery
             var Claim_N = e.features[0].properties.name;
             var Street_N = e.features[0].properties.street;
             var City_N = e.features[0].properties.city;
+            var insVal = e.features[0].properties.Insured_Value;
 
             var options2 = { style: 'currency', currency: 'USD' };
             var numberFormat2 = new Intl.NumberFormat('en-US', options2);
@@ -857,7 +858,7 @@ define(["https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js", "jquery
 
             new mapboxgl.Popup()
                 .setLngLat(coordinates)
-                .setHTML('<h3>' + 'Property: ' + Claim_N + '</h3>' + 'Street: ' + Street_N + '<br>' + 'City: ' + City_N + '<br>' + '</p>')
+                .setHTML('<h3>' + 'Property: ' + Claim_N + '</h3>' + 'Street: ' + Street_N + '<br>' + 'City: ' + City_N + '<br>' + 'Insured Value:' + insVal + '</p>')
                 .addTo(map);
         });
 
