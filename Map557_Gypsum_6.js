@@ -290,7 +290,7 @@ define(["https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js", "jquery
 
             var popup = new mapboxgl.Popup({ offset: [0, -15] })
                 .setLngLat(feature.geometry.coordinates)
-                .setHTML('<h3>' + feature.properties.place + '</h3><p>' 'Insured Value' + feature.properties.Insured_Value + '<br>' + 'Magnitude: ' + feature.properties.mag + '<br>' + 'Date: ' + Day1 + '<br>' + 'source: http://earthquake.usgs.gov/earthquakes' + '</p>')
+                .setHTML('<h3>' + feature.properties.place + '</h3><p>' + 'Insured Value' + feature.properties.Insured_Value + '<br>' + 'Magnitude: ' + feature.properties.mag + '<br>' + 'Date: ' + Day1 + '<br>' + 'source: http://earthquake.usgs.gov/earthquakes' + '</p>')
                 .setLngLat(feature.geometry.coordinates)
                 .addTo(map);
 
