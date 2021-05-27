@@ -856,7 +856,7 @@ define(["https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js", "jquery
 
             new mapboxgl.Popup()
                 .setLngLat(coordinates)
-                .setHTML('<h3>' + 'Property: ' + Claim_N + '</h3>' + 'Street: ' + Street_N + '<br>' + 'City: ' + City_N + '<br>' + 'Total Insured: $' + Paid.toFixed(2) + '<br>' + '</p>')
+                .setHTML('<h3>' + 'Property: ' + Claim_N + '</h3>' + 'Street: ' + Street_N + '<br>' + 'City: ' + City_N + '<br>' + 'Total Insured: $' + Paid + '<br>' + '</p>')
                 .addTo(map);
         });
 
